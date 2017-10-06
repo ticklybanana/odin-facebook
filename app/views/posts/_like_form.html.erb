@@ -1,0 +1,11 @@
+<% if Like.exists?(user_id: current_user.id, contentable_id: object.id, contentable_type: object.class.to_s) %>
+  <% submit_disabled_value = true %>
+<% else %>
+  <% submit_disabled_value = false %>
+<% end %>
+<%= form_for :like, url: likes_path do |f| %>
+  <%= f.hidden_field :contentable_id, value: object.id %>
+  <%= f.hidden_field :contentable_type, value: object.class.to_s %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= submit_tag 'Like', disabled: submit_disabled_value %>
+<% end %>

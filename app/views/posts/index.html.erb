@@ -1,0 +1,9 @@
+<p>THESE ARE ALL THE POSTS BOIII. THI'LL BE HOME PAGE</p>
+<% @posts.each do |content| %>
+  <%= render 'posts/post_info', object: content %>
+  <%= render 'posts/like_form', object: content %>
+  <% content.comments.each do |comment| %>
+    <%= render 'posts/post_info', object: comment %>
+    <%= render 'posts/like_form', object: comment %>
+  <% end %>
+<% end %>

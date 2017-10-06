@@ -18,6 +18,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # Authentication
 gem 'devise'
+# ActiveRecord unions
+gem 'active_record_union'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
